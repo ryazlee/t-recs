@@ -1,33 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# T-Recs
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```plaintext
+ ___       __   _______   ___       ________  ________  _____ ______   _______
+|\  \     |\  \|\  ___ \ |\  \     |\   ____\|\   __  \|\   _ \  _   \|\  ___ \
+\ \  \    \ \  \ \   __/|\ \  \    \ \  \___|\ \  \|\  \ \  \\\__\ \  \ \   __/|
+ \ \  \  __\ \  \ \  \_|/_\ \  \    \ \  \    \ \  \\\  \ \  \\|__| \  \ \  \_|/__
+  \ \  \|\__\_\  \ \  \_|\ \ \  \____\ \  \____\ \  \\\  \ \  \    \ \  \ \  \_|\ \
+   \ \____________\ \_______\ \_______\ \_______\ \_______\ \__\    \ \__\ \_______\
+    \|____________|\|_______|\|_______|\|_______|\|_______|\|__|     \|__|\|_______|
+ _________  ________
+|\___   ___\\   __  \
+\|___ \  \_\ \  \|\  \
+     \ \  \ \ \  \\\  \
+      \ \  \ \ \  \\\  \
+       \ \__\ \ \_______\
+        \|__|  \|_______|
+ _________               ________  _______   ________  ________
+|\___   ___\            |\   __  \|\  ___ \ |\   ____\|\   ____\
+\|___ \  \_|____________\ \  \|\  \ \   __/|\ \  \___|\ \  \___|_
+     \ \  \|\____________\ \   _  _\ \  \_|/_\ \  \    \ \_____  \
+      \ \  \|____________|\ \  \\  \\ \  \_|\ \ \  \____\|____|\  \
+       \ \__\              \ \__\\ _\\ \_______\ \_______\____\_\  \
+        \|__|               \|__|\|__|\|_______|\|_______|\_________\
+                                                         \|_________|
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welcome to T-Recs!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+T-Recs is a travel guide social system that allows users to share their travel recs with other users.  It is designed to be a platform for travelers to discover new places, vetted by people you can trust.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Please check out the [dev guide](docs/dev_guide.md) for more information on how to set up your local development environment.
 
 ## Deploy on Vercel
 

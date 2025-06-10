@@ -37,10 +37,8 @@ You can checkout a Google Doc explaining how this app works in detail in the [T-
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Please check out the [dev guide](docs/dev_guide.md) for more information on how to set up your local development environment.
+Please check out the [dev guide](docs/dev_guide.md) for more information on how to set up your local development environment and how to contribute.
 
-## Deploy on Vercel
+## Future Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [future development docs](docs/future_development.md) for more information on what's to come.

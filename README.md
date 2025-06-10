@@ -29,6 +29,10 @@ Welcome to T-Recs!
 
 T-Recs is a travel guide social system that allows users to share their travel recs with other users.  It is designed to be a platform for travelers to discover new places, vetted by people you can trust.
 
+## Site Overview
+
+You can checkout a Google Doc explaining how this app works in detail in the [T-Recs Documentation](https://docs.google.com/document/d/1lr9Q92eMnxP4fnEUJF7ftt1k3TROnU7RM3tv47Nzs4g/edit?usp=sharing). Feel free to leave comments on the doc if you have any questions or suggestions!
+
 ## Tech Stack
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

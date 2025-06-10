@@ -7,7 +7,7 @@ This document serves as a guide for developers working on the project. It includ
 1. **Clone the Repository**: Start by cloning the repository to your local machine.
 
    ```bash
-   git clone <FILL IN>
+   git clone https://github.com/ryazlee/t-recs.git
    cd t-recs
    ```
 
@@ -17,7 +17,7 @@ This document serves as a guide for developers working on the project. It includ
    yarn install
    ```
 
-3. **Environment Variables**: Create a `.env.local` file in the root directory and add any necessary environment variables. You can refer to `.env.example` for guidance on what variables are needed.
+3. **Environment Variables**: Create a `.env.local` file in the root directory and add any necessary environment variables.  Contact @ryazlee for the `.env.local` file.
 
 4. **Run the Development Server**: Start the development server to see the application in action.
 
@@ -29,26 +29,36 @@ This document serves as a guide for developers working on the project. It includ
 
 ## Pushing Changes
 
-1. **Create a Branch**: Before making any changes, create a new branch for your feature or bug fix.
+1. **Get Latest Changes**: Before starting work, ensure you have the latest changes from the `main` branch.
+
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+2. **Create a Branch**: Before making any changes, create a new branch for your feature or bug fix.
 
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
-2. **Make Changes**: Implement your changes in the codebase. Ensure that you follow the coding standards outlined below.
-3. **Commit Your Changes**: Once you are satisfied with your changes, commit them with a descriptive message.
+3. **Make Changes**: Implement your changes in the codebase. Ensure that you follow the coding standards outlined below.
+
+4. **Commit Your Changes**: Once you are satisfied with your changes, commit them with a descriptive message.
 
    ```bash
    git add .
-   git commit -m "Add feature: your-feature-description"
+   git commit -m "message describing your changes"
    ```
 
-4. **Push Your Branch**: Push your changes to the remote repository.
+5. **Push Your Branch**: Push your changes to the remote repository.
 
    ```bash
    git push origin feature/your-feature-name
    ```
 
-5. **Create a Pull Request**: Go to the repository on GitHub and create a pull request from your branch to the `main` branch. Provide a clear description of your changes and any relevant context.
+6. **Create a Pull Request**: Go to the [T-Recs repository](https://github.com/ryazlee/t-recs/) on GitHub and create a pull request from your branch to the `main` branch. Provide a clear description of your changes and any relevant context.
 
-6. **Review Process**: Wait for your pull request to be reviewed by other team members. Address any feedback or changes requested during the review process.  You will be required to get at least one approval before merging.
+7. **Assign Reviewers**: Assign reviewers to your pull request. This can be done by tagging team members who should review your changes.  You probably want to tag @ryazlee as the primary reviewer.
+
+8. **Review Process**: Wait for your pull request to be reviewed by other team members. Address any feedback or changes requested during the review process.  You will be required to get at least one approval before merging.

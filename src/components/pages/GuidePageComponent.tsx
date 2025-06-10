@@ -2,25 +2,26 @@ import { api } from "@/api";
 import { useEffect, useState } from "react";
 
 import Map from "@/components/Map";
+import { getGuide } from "@/api/guides";
 
 export default function GuidePageComponent({ id }: { id: string }) {
 	const [guide, setGuide] = useState<any>(null);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
-		async function fetchGuide() {
-			const guide = await api.guides.getGuide(id);
-			if (guide) {
-				setGuide(guide);
-				setError(null); // Clear any previous error
-			} else {
-				setError("No such guide exists!");
-			}
-		}
-
 		if (!id) {
 			return;
 		}
+
+		const fetchGuide = async () => {
+			try {
+				const guideData = await getGuide(id);
+				setGuide(guideData);
+			} catch (e) {
+				console.error("Error fetching guide:", e);
+				setError(e instanceof Error ? e.message : "An error occurred");
+			}
+		};
 
 		fetchGuide();
 	}, [id]);

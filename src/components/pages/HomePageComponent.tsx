@@ -11,10 +11,7 @@ export default function HomePageComponent() {
 				<p className="text-s mb-2">Glad you are here, friend!</p>
 				<div>
 					Please check out the{" "}
-					<a
-						href="/guide/dummyguide"
-						className="text-blue-500 underline"
-					>
+					<a href="/guide/dummy" className="text-blue-500 underline">
 						dummy guide
 					</a>{" "}
 					first!

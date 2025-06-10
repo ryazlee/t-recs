@@ -1,6 +1,8 @@
 import { api } from "@/api";
 import { useEffect, useState } from "react";
 
+import Map from "@/components/Map";
+
 export default function GuidePageComponent({ id }: { id: string }) {
 	const [guide, setGuide] = useState<any>(null);
 	const [error, setError] = useState<string | null>(null);
@@ -44,6 +46,7 @@ export default function GuidePageComponent({ id }: { id: string }) {
 							)
 						)}
 					</ul>
+					<Map />
 				</>
 			) : (
 				<p>Loading guide...</p>

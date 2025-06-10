@@ -1,5 +1,4 @@
-import { clientDb } from "@/backend/firebase/client";
-import { doc, getDoc } from "firebase/firestore";
+import { api } from "@/api";
 import { useEffect, useState } from "react";
 
 export default function GuidePageComponent({ id }: { id: string }) {
@@ -8,19 +7,19 @@ export default function GuidePageComponent({ id }: { id: string }) {
 
 	useEffect(() => {
 		async function fetchGuide() {
-			if (!id) {
-				console.warn("No guide ID provided!");
-				return;
-			}
-			const docRef = doc(clientDb, "guides", id);
-			const docSnap = await getDoc(docRef);
-			if (docSnap.exists()) {
-				setGuide(docSnap.data());
+			const guide = await api.guides.getGuide(id);
+			if (guide) {
+				setGuide(guide);
 				setError(null); // Clear any previous error
 			} else {
 				setError("No such guide exists!");
 			}
 		}
+
+		if (!id) {
+			return;
+		}
+
 		fetchGuide();
 	}, [id]);
 

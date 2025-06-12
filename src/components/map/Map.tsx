@@ -6,7 +6,7 @@ export default function Map() {
 
 	useEffect(() => {
 		const initMap = async () => {
-			const Map = await loadMapLibrary();
+			const { Map } = await loadMapLibrary();
 
 			if (mapRef.current) {
 				new Map(mapRef.current, {

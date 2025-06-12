@@ -1,3 +1,4 @@
+import { Place } from "@/models/place";
 import { DocumentSnapshot } from "firebase/firestore";
 
 export interface Guide {
@@ -11,6 +12,7 @@ export interface Guide {
 	visibility: number; // Visibility options: public, private, unlisted
 	categories: string[]; // List of categories
 	collaborators: string[]; // List of userIds who can collaborate
+	places: Place[]; // List of places in the guide
 }
 
 export function docToGuide(doc: DocumentSnapshot): Guide {

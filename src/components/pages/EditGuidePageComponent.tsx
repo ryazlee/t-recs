@@ -1,7 +1,7 @@
 import { getGuide } from "@/api/guides";
 import { Guide } from "@/models/guide";
 import { useEffect, useState } from "react";
-import Map from "@/components/map/Map";
+import GuideMap from "@/components/map/GuideMap";
 
 export default function EditGuidePageComponent({ id }: { id: string }) {
 	const [currGuide, setCurrGuide] = useState<Guide | null>(null);
@@ -151,7 +151,7 @@ export default function EditGuidePageComponent({ id }: { id: string }) {
 						</div>
 					</form>
 					<div className="lg:w-3/4">
-						<Map />
+						<GuideMap guide={currGuide} />
 					</div>
 				</div>
 			) : (

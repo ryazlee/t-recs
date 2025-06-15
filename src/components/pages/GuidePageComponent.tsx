@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Map from "@/components/map/Map";
+import GuideMap from "@/components/map/GuideMap";
 import { getGuide } from "@/api/guides";
-import { fakeDataApi } from "@/api";
 
 export default function GuidePageComponent({ id }: { id: string }) {
 	const [guide, setGuide] = useState<any>(null);
@@ -14,14 +13,9 @@ export default function GuidePageComponent({ id }: { id: string }) {
 		}
 
 		const fetchGuide = async () => {
-			if (id === "fake") {
-				setGuide(fakeDataApi.getGuide(id));
-				return;
-			}
-
 			try {
 				const guideData = await getGuide(id);
-				setGuide(guideData);
+				setGuide({ ...guideData });
 			} catch (e) {
 				console.error("Error fetching guide:", e);
 				setError(e instanceof Error ? e.message : "An error occurred");
@@ -65,7 +59,7 @@ export default function GuidePageComponent({ id }: { id: string }) {
 				)}
 			</div>
 			<div className="lg:w-3/4 lg:pl-4">
-				<Map />
+				<GuideMap guide={guide} />
 			</div>
 		</div>
 	);

@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 
 import GuideMap from "@/components/map/GuideMap";
 import { getGuide } from "@/api/guides";
+import MetadataTab from "@/components/guide/viewer/tabs/MetadataTab";
+import PlacesTab from "@/components/guide/viewer/tabs/PlacesTab";
+import ReviewsTab from "@/components/guide/viewer/tabs/ReviewsTab";
+
+const TABS = ["Metadata", "Places", "Reviews"];
 
 export default function GuidePageComponent({ id }: { id: string }) {
 	const [guide, setGuide] = useState<any>(null);
 	const [error, setError] = useState<string | null>(null);
+	const [activeTab, setActiveTab] = useState("Metadata");
 
 	useEffect(() => {
-		if (!id) {
-			return;
-		}
+		if (!id) return;
 
 		const fetchGuide = async () => {
 			try {
@@ -25,40 +29,55 @@ export default function GuidePageComponent({ id }: { id: string }) {
 		fetchGuide();
 	}, [id]);
 
+	const renderTabContent = () => {
+		if (!guide) return <p>Loading guide...</p>;
+
+		switch (activeTab) {
+			case "Metadata":
+				return <MetadataTab guide={guide} />;
+			case "Places":
+				return <PlacesTab guide={guide} />;
+			case "Reviews":
+				return <ReviewsTab guide={guide} />;
+			default:
+				return null;
+		}
+	};
+
 	return (
-		<div className="container mx-auto p-4 flex flex-col lg:flex-row">
-			<div className="lg:w-1/4">
+		<div className="container mx-auto p-4 flex flex-col lg:flex-row ">
+			{/* Left Panel: Tabs + Content */}
+			<div className="w-full lg:w-1/3 mb-4 lg:mb-0 overflow-y-auto">
 				<h1 className="text-2xl font-bold mb-4">Guide</h1>
 				{error ? (
 					<p className="text-red-500">{error}</p>
-				) : guide ? (
-					<>
-						<h2 className="text-xl font-semibold mb-2">
-							{guide.title}
-						</h2>
-						<p className="mb-4">{guide.description}</p>
-						<h3>Categories</h3>
-						<ul className="list-disc pl-5 mb-4">
-							{guide.categories?.map(
-								(category: string, index: number) => (
-									<li key={index} className="mb-1">
-										{category}
-									</li>
-								)
-							)}
-						</ul>
-						<a
-							href={`/guide/edit/${id}`}
-							className="text-blue-500 hover:underline"
-						>
-							Edit Guide
-						</a>
-					</>
 				) : (
-					<p>Loading guide...</p>
+					<>
+						{/* Tabs */}
+						<div className="flex space-x-2 mb-4">
+							{TABS.map((tab) => (
+								<button
+									key={tab}
+									onClick={() => setActiveTab(tab)}
+									className={`px-4 py-2 rounded-md whitespace-nowrap ${
+										activeTab === tab
+											? "bg-blue-100 text-blue-800 font-semibold"
+											: "hover:bg-gray-100"
+									}`}
+								>
+									{tab}
+								</button>
+							))}
+						</div>
+
+						{/* Panel Content */}
+						<div>{renderTabContent()}</div>
+					</>
 				)}
 			</div>
-			<div className="lg:w-3/4 lg:pl-4">
+
+			{/* Right Panel: Map */}
+			<div className="w-full lg:w-2/3 lg:pl-4 h-full">
 				<GuideMap guide={guide} />
 			</div>
 		</div>

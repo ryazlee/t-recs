@@ -4,7 +4,7 @@ import { Guide } from "@/models/guide";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 
 const fakeGuide: Guide = {
-	id: "fakeGuideId",
+	id: "fake",
 	title: `Fake Guide`,
 	description: `This is a fake guide description for guide fakeGuideId.`,
 	categories: ["Category 1", "Category 2"],
@@ -13,7 +13,7 @@ const fakeGuide: Guide = {
 	places: [
 		{
 			id: "place1",
-			guideId: "fakeGuideId",
+			guideId: "fake",
 			name: "Fake Place 1",
 			description: "This is a description for fake place 1.",
 			lat: 37.7749 + Math.random() * 0.01, // Random offset for variety
@@ -35,7 +35,7 @@ const fakeGuide: Guide = {
 		},
 		{
 			id: "place2",
-			guideId: "fakeGuideId",
+			guideId: "fake",
 			name: "Fake Place 2",
 			description: "This is a description for fake place 2.",
 			lat: 37.7749 + Math.random() * 0.01, // Random offset for variety

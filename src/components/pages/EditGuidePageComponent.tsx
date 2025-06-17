@@ -1,7 +1,7 @@
 import { getGuide } from "@/api/guides";
 import { Guide } from "@/models/guide";
 import { useEffect, useState } from "react";
-import GuideMap from "@/components/map/GuideMap";
+import GuideMap from "@/components/guide/map/GuideMap";
 
 export default function EditGuidePageComponent({ id }: { id: string }) {
 	const [currGuide, setCurrGuide] = useState<Guide | null>(null);

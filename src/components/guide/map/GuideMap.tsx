@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { loadMapLibrary } from "@/api/googleMaps";
 import { Guide } from "@/models/guide";
+import { getGuideMapBounds } from "@/components/guide/map/utils";
 
 export default function GuideMap({ guide }: { guide?: Guide }) {
 	const mapRef = useRef<HTMLDivElement>(null);
@@ -11,8 +12,7 @@ export default function GuideMap({ guide }: { guide?: Guide }) {
 
 			if (mapRef.current) {
 				const map = new Map(mapRef.current, {
-					center: { lat: 37.7749, lng: -122.4194 },
-					zoom: 12,
+					...getGuideMapBounds(guide),
 					mapId: process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID!,
 				});
 

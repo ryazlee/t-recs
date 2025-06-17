@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 
-import GuideMap from "@/components/map/GuideMap";
+import GuideMap from "@/components/guide/map/GuideMap";
 import { getGuide } from "@/api/guides";
 import MetadataTab from "@/components/guide/viewer/tabs/MetadataTab";
 import PlacesTab from "@/components/guide/viewer/tabs/PlacesTab";
 import ReviewsTab from "@/components/guide/viewer/tabs/ReviewsTab";
+import { Guide } from "@/models/guide";
 
 const TABS = ["Metadata", "Places", "Reviews"];
 
 export default function GuidePageComponent({ id }: { id: string }) {
-	const [guide, setGuide] = useState<any>(null);
+	const [guide, setGuide] = useState<Guide | null>(null);
 	const [error, setError] = useState<string | null>(null);
 	const [activeTab, setActiveTab] = useState("Metadata");
 
@@ -48,7 +49,7 @@ export default function GuidePageComponent({ id }: { id: string }) {
 		<div className="container mx-auto p-4 flex flex-col lg:flex-row ">
 			{/* Left Panel: Tabs + Content */}
 			<div className="w-full lg:w-1/3 mb-4 lg:mb-0 overflow-y-auto">
-				<h1 className="text-2xl font-bold mb-4">Guide</h1>
+				<h1 className="text-2xl font-bold mb-4 ">{guide?.title}</h1>
 				{error ? (
 					<p className="text-red-500">{error}</p>
 				) : (
@@ -78,7 +79,8 @@ export default function GuidePageComponent({ id }: { id: string }) {
 
 			{/* Right Panel: Map */}
 			<div className="w-full lg:w-2/3 lg:pl-4 h-full">
-				<GuideMap guide={guide} />
+				{/* <GuideMap guide={guide} /> */}
+				placeholder
 			</div>
 		</div>
 	);

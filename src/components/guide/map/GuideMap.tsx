@@ -3,7 +3,7 @@ import { loadMapLibrary } from "@/api/googleMaps";
 import { Guide } from "@/models/guide";
 import { getGuideMapBounds } from "@/components/guide/map/utils";
 
-export default function GuideMap({ guide }: { guide?: Guide }) {
+export default function GuideMap({ guide }: { guide: Guide | null }) {
 	const mapRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {

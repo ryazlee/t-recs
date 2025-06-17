@@ -79,8 +79,7 @@ export default function GuidePageComponent({ id }: { id: string }) {
 
 			{/* Right Panel: Map */}
 			<div className="w-full lg:w-2/3 lg:pl-4 h-full">
-				{/* <GuideMap guide={guide} /> */}
-				placeholder
+				<GuideMap guide={guide} />
 			</div>
 		</div>
 	);
